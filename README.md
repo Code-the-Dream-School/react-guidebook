@@ -157,3 +157,5 @@ Please remember to fill out the [Mentor Session Report Form](https://airtable.co
 ## Common Issues 
 
 TBD
+
+:crown: Thanks to Raquel Roman-Rodriguez, who assembled the teaching notes for this lesson.

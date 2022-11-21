@@ -1,8 +1,8 @@
-# Lesson XXX Teaching Notes 
+# Lesson 1.7 Teaching Notes 
 
 | **Topic** | **Week** | **Class Website** |
 | :---: | :---: | :---: |
-| XXX | XXX | [Link](https://learn.codethedream.org/) |
+| Asynchronous Data, Conditional Rendering, Advanced and Impossible State | 1.7 | [Link](https://learn.codethedream.org/) |
 
 ## Outline 
 - Overview
@@ -11,9 +11,7 @@
 
 ## Overview 
 
-**Learning Objective:** XXX
-
-WRITE OVERVIEW TEXT HERE 
+**Learning Objective:** Students will be able to connect to Airtable API and fetch data from Airtable. 
 
 ## Sample Mentor Session 
 
@@ -40,13 +38,58 @@ While students are responding to the check-in questions, take attendance.
 
 Let's review some key terms and concepts from this week's lesson materials: 
  
- - TBD
- - TBD 
- - TBD 
- 
-### :notebook: Assignment Overview
+- Async data
+- Conditional rendering
+- Advanced state
+- Impossible state
 
-Let's take a look at the directions for this week's assignment: [XXX](XXX)
+#### Observations
+
+- Promise...resolve is more difficult to wrap your head around than fetch
+  - BUT the underlying technology of fetch is Promise!
+  - [JS Promises: an intro](https://web.dev/promises/)
+  - [States and Fates](https://github.com/domenic/promises-unwrapping/blob/master/docs/states-and-fates.md)
+
+#### Async data
+
+- Allows for time-expensive processes (fetching data) to be non-blocking
+
+#### Conditional rendering
+
+- Evaluate the condition of a particular evaluation then use it to decide whether to render something
+  - inline with ternary
+  - separate function that returns jsx (if/then, switch/case/default, etc)
+  - React accepts `null` and will do nothing
+- Nice for user interface to show a "loading" status
+- Hide resources for certain types of users
+  - Links/ resources available for only logged in users
+  - Login form for those who are not logged in (makes no sense to show a login form when someone is already logged in)
+
+#### Advanced state
+
+- useReducer- good for complex state structures (think redux)
+
+#### Impossible state
+
+- multiple useStates can end up causing problems when useEffect is introduced, especially when having to handle errors. Should a promise reject, depending on how the useState's have been implemented, there could be a conflict (eg- a fetch fails but an error message is never able to be shown because a "loading" indicator state does not get changed on a success.)
+- more info about how to use useReducer
+
+#### Potential concept demo ideas
+
+- practical useReducer scenario
+- conditional rendering- have a "complete task" button strike through task then exposes a "hide all completed tasks" button
+- if field empty and isLoading, disable submit
+
+#### Todo list instructions call-outs
+
+- the new useEffect with the Promise is muddy AF
+  - The promise should be given, instructions should be re-worded, or a brief explanation of a Promise and its composition should be provided.
+- programmer set up for frustration by allowing then to experience dueling useEffects before warning them
+
+#### End of lesson app capabilities/features
+
+- Todo list will load from local storage after 2 seconds, until it does, a loading message will show on the screen
+- adding todos will not work until time has elapsed
 
 ### :thinking: Questions 
 
@@ -55,10 +98,6 @@ Use this time to answer students questions from the lesson materials and assignm
   - Think aloud: Narrate your thinking to show students how developers approach problems. For example, “When I saw this problem, I decided to approach it by…”
   - Use positive narration. For example, “I appreciate that Raheem has his camera on today” or “That was an excellent question."
   - Warm call on students or practice popcorn calling (students can ask another student for help) if participation is low.
-
-### :telescope: Looking Ahead 
-
-XXX
 
 ### :nerd_face: Mentor Session Report Form 
 

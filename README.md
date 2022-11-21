@@ -36,62 +36,44 @@ While students are responding to the check-in questions, take attendance.
 
 ### :mag: Content Overview 
 
-Let's review some key terms and concepts from this week's lesson materials: 
- 
- - Callback handler
- - Controlled components 
- - Unidirectional data flow
- - Component lifecycle 
- - Nested destructuring 
- 
- 
-### :notebook: Assignment Overview
+## Concepts covered
 
-Let's take a look at the directions for this week's assignment: 
+- Lifting state
+- Controlled components
+- Props handling
 
-Move Todo List into State
-  - [x] Open `/src/App.js`
-  - [x] Create new state variable named `todoList` with setter `setTodoList` and default value of an empty Array
-  - [x] Pass `todoList` state as a prop named `todoList` to the `TodoList` component
-  - [x] Open `/src/TodoList.js`
-  - [x] Add `props` as a parameter to the `TodoList` functional component
-  - [x] Change `todoList` to reference props instead of the hard-coded variable
-  - [x] Delete the hard-coded `todoList` variable
-  - [x] Run your application and view in browser
-    - [x] Verify that your Todo List is now empty (no list items)
+### Lifting state
 
-- Control "Add Todo" Input
-  - [x] Open `/src/AddTodoForm.js`
-  - [x] Create new state variable named `todoTitle` with setter `setTodoTitle`
-  - [x] Modify the `<input>` element to be a controlled input
-    - [x] Add `value` prop equal to `todoTitle` from component props
-    - [x] Add `onChange` prop equal to `handleTitleChange` function reference (we will declare this function in the next step)
-  - [x] Above the `handleAddTodo` function, declare a new function named `handleTitleChange` that takes `event` as a parameter
-    - [x] First, retrieve the input value from the `event` object and store in variable named `newTodoTitle`
-    - [x] Then, call the state setter `setTodoTitle` and pass `newTodoTitle`
-  - [x] In the `handleAddTodo` function, remove the `todoTitle` variable and update `onAddTodo` callback handler to pass our `todoTitle` state variable instead
-  - [x] Run your application and view in browser
-    - [x] Enter a new todo in "Add Todo" form, submit, and verify that the title appears below
+- Establishes state management in a parent component, where more persistent state is usually managed.
+- an update handler is passed down to the child component where it is used to pass data changes back up to the parent.
 
-- Add New Todo to List
-  - [x] Open `/src/App.js`
-  - [x] Remove the `newTodo` state variable and the corresponding JSX that displays it
-  - [x] Declare a new function named `addTodo` that takes `newTodo` as a parameter
-    - [x] Call the `setTodoList` state setter and use the spread operator to pass the existing Objects in the `todoList` Array along with the `newTodo` Object
-  - [x] Change the value of the `onAddTodo` prop for `AddTodoForm` to `addTodo`
-  - [x] Open `/src/AddTodoForm.js`
-  - [x] Inside `handleAddTodo`, update the `onAddTodo` callback prop to pass an Object instead of a String; Object should have the following properties:
-    - [x] `title`: equal to `todoTitle`
-    - [x] `id`: unique identifier (hint: use `Date.now()` to generate a unique number)
-      - _Disclaimer: we are suggesting `Date.now()` for now as a placeholder for unique number generation, but in the future you should not use this_
-  - [x] Inside `handleAddTodo`, remove the `reset()` method and replace it with logic to reset the `todoTitle` state to an empty String
-  - [x] Run your application and view in browser
-    - [x] Enter a todo in "Add Todo" form, submit, and verify item is visible in todo list
-    - [x] Enter another todo, submit, and verify that two items are visible in todo list
-- Destructure Props
-  - [x] Open `/src/TodoList.js` and update `props` to use destructuring
-  - [x] Open `/src/TodoListItem.js` and update `props` to use destructuring
-  - [x] Open `/src/AddTodoForm.js` and update `props` to use destructuring
+#### Controlled components
+
+- Allows React to be fully aware of data in form fields at all times.
+- Turns each input into a piece of managed state (useState)
+  - Couples input value to a value then uses an update function tied to events on the specific field (usually onChange)
+- Instead of having to grab all values from the form on a submit event, it can grab from the state which is a much easier, cleaner process.
+- I call this sort of data "ephemeral"- it's important for user interaction while the component is present but i isn't until data is submitted or confirmed as complete in some other way, it does not have an impact on the larger app.
+  - This way the larger picture of state management isn't muddied.
+  - Also keeps temporary data out of other state management systems like redux
+
+#### Props handling
+
+- props is an object full of properties (thus the name) passed from a parent to child component.
+- destructuring in the child function's arguments allows the developer to grab at the values directly instead of having to reference it through dot notation.
+  - serves as a reminder of what values are available
+  - increases readability as there's less code to deal with
+
+### Potential concept demo ideas
+
+- Individual controlled fields vs entire form controlled via single handler
+- multi-layered object destructuring (see road to react p72)
+- grabbing additional properties using rest operator (see road to react p73)
+- how to import and use ULID or UUID for keys instead of Date.now()
+
+### Todo list instructions call-outs
+
+### End of lesson app capabilities/features
 
 ### :thinking: Questions 
 
@@ -109,4 +91,4 @@ Please remember to fill out the [Mentor Session Report Form](https://airtable.co
 
 TBD
 
-:crown: Thanks to Raquel Román-Rodriguez, who assembled the rubric for this lesson. 
+:crown: Thanks to Roy Mosby, who assembled the teaching notes for this lesson, and Raquel Román-Rodriguez, who assembled the lesson rubric. 

@@ -71,10 +71,6 @@ While students are responding to the check-in questions, take attendance.
 - grabbing additional properties using rest operator (see road to react p73)
 - how to import and use ULID or UUID for keys instead of Date.now()
 
-### Todo list instructions call-outs
-
-### End of lesson app capabilities/features
-
 ### :thinking: Questions 
 
 Use this time to answer students questions from the lesson materials and assignments. Remember to incorporate teaching strategies:

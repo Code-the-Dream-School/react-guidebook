@@ -1,27 +1,22 @@
-# Lesson 1.2 Teaching Notes
+# Lesson 1.3 Teaching Notes
 
 | **Topic** | **Week** | **Lesson** |
 | :---: | :---: | :---: |
-| React DOM & Components | 1.2 | [link](https://learn.codethedream.org/react-fundamentals-react-dom-and-components/) |
+| Props, State, and Handlers | 1.3 | [link](https://learn.codethedream.org/react-fundamentals-react-dom-and-components/) |
 
 ## Outline
 
 - [:telescope: Overview](#telescope-overview)
 - [:wave: Check-In](#wave-check-in)
-- [:mag: Review](#mag-review)
   - [Vocabulary Review](#vocabulary-review)
   - [Knowledge Check-In](#knowledge-check-in)
 - [:bulb: Main Concepts](#bulb-main-concepts)
-  - [Vocabulary Terms](#vocabulary-terms)
-  - [React Component](#react-components)
-  - [Instantiating Components](#instantiating-components)
-  - [React DOM](#react-dom)
-  - [Component Definition](#component-definition)
 -  [:question: Additional Questions](#question-additional-questions)
 
 ## :telescope: Overview
 
-**Learning Objective**: Students will be able to generate a new React project and create a new unordered to-do list. 
+**Learning Objective**: Students will be able to Create a “To-do list item” component and move new list items into that component, 
+enable form submission, store “new to-do” within React state.
 
 ## :wave: Check-In
 
@@ -42,37 +37,9 @@
 
 ## :mag: Review
 
-Let's review some key terms and concepts from last week's lesson: [*React Fundamentals: Project Setup & React Basics*](https://learn.codethedream.org/react-fundamentals-project-setup-and-react-basics/).
+Let's review some key terms and concepts from last week's lesson: [*React DOM and Components*](https://learn.codethedream.org/react-fundamentals-react-dom-and-components/).
 
 ### Vocabulary Review
-
-- Single-page application (SPA)
-- Framework
-- React
-- Component
-- JSX
-- Babel
-- `map()`
-- `key`
-- Camel case
-- Pascal case
-
-### Knowledge Check-In
-
-- How do we know when to use `var`, `let`, or `const` when declaring a variable?
-  - `var` - never, reassignable, not block scoped
-  - `let` - for variables that might change value, reassignable, block scoped
-  - `const` - for variables that won't change value, not reassignable, block scoped
-- How does JSX become HTML?
-  - Babel transpiles JSX into VanillaJS which then evaluates to our HTML webpage
-- Why is it important to use the `key` attribute when creating a list?
-  - "A React app is made up of a tree of components. Whenever there’s a prop or state change in any component, React re-renders its components into its virtual DOM. The diffing algorithm compares the new virtual DOM with the old DOM at each level of the component tree, starting from the root node."
-
-## :bulb: Main Concepts
-
-This week's lesson builds on the foundational knowledge from last week to expand our understanding of the **React Component**!
-
-### Vocabulary Terms
 
 - Instantiate
 - DOM
@@ -81,74 +48,39 @@ This week's lesson builds on the foundational knowledge from last week to expand
 - Callback Function
 - Implicit Return
 
-### React Components
+## :bulb: Main Concepts
 
-- What are *components* in React?
+### Props
 
-  ```js
-  {vocabularyTerms.map( v => <li>{v.term} - {v.definition}</li>)}
-  ```
+- information from parent component for child component to use (how parent communicates with child)
+- called "props" for properties. Potentially includes children elements if any are placed between opening and closing tags.
 
-- Why do we use components?
+### State
 
-  A component must:
+- data that describes the values being used inside the app.
 
-  1. return JSX
-  2. take one argument, `props`, which is an object
-  3. The functional binding name must begin with a capital letter
+### Handler function in JSX
 
-- What are types of components in the component hierarchy?
-
-### Instantiating Components
-
-- What does *instantiate* mean?
-- How do we instantiate a component in React?
-
-### React DOM
-
-- What is the DOM?
-  - The Document Object Model is a tree-like structure that contains all of the elements and their properties of a website as the nodes.
-
-- What is the ReactDOM?
-
-  The `ReactDOM` is an importable package that provides methods to manage the DOM elements of a webpage
-
-- What is the purpose of the `createRoot` function?
-  > :warning: `createRoot` is a new method in React 18.
-
-  `createRoot` takes a "container" element and returns a root. We can then call `root.render()` with the element we want to render as an argument
-
-  ```js
-  // in index.js
-  const container = document.getElementById("root");
-  const root = createRoot(container);
-
-  root.render(
-    <App />
-  );
-  ```
-
-  ```js
-  // you may also see older react projects (< React 18) use this syntax:
-  const container = document.getElementByID("root");
-
-  ReactDOM.render(
-    <App />,
-    container
-  );
-  ```
-
-### Component Definition
-
-- How can we declare a component?
-
-- Aside from syntax, what are the differences between **arrow functions** and **function declarations**?
-  - Implicit Return
-  - `this`
+- HTML + JS uses event handlers: addEventListener(type, listener)
+  - events eg: "click", "resize", "keyup"
+  - listener is callback function that does something when event fires on target
+- React uses synthetic events that closely mirror regular events but normalized across browsers to minimize behavioral variations
+  - conventionally named with "on" prefix then camelCase
+  - ? maybe something about bubble vs capture phases
+- The "handler function" is the callback function that is called when the synthetic event is triggered
+  - defined inline or outside of jsx then provided as a value for the event listener (differentiate between giving a function as a value vs a function's return value)
+  - inline: `onClick={(evt) => console.log(evt.target.value)}`
+  - as reference w/o args: `onClick={printHi}`
+  - as reference w/args: `onClick=((evt) => printEvent(evt))`
+  - don't invoke a function inside an event listener unless it returns a function
 
 ## :question: Additional Questions
 
-Use this time to answer any additional questions from students. 
+Use this time to answer any additional questions from students. Remember to incorporate teaching strategies:
+
+- Think aloud: Narrate your thinking to show students how developers approach problems. For example, “When I saw this problem, I decided to approach it by…”
+- Use positive narration. For example, “I appreciate that Raheem has his camera on today” or “That was an excellent question."
+- Warm call on students or practice popcorn calling (students can ask another student for help) if participation is low.
 
 ## :nerd_face: Mentor Session Report Form 
 
@@ -158,4 +90,4 @@ Please remember to fill out the [Mentor Session Report Form](https://airtable.co
 
 TBD
 
-:crown: Thanks to Raquel Roman-Rodriguez, who assembled the teaching notes for this lesson.
+:crown: Thanks Roy Mosby, who assembled the teaching notes for this lesson. Raquel Román-Rodriguez assembled the rubric. 

@@ -1,8 +1,8 @@
-# Lesson XXX Teaching Notes 
+# Lesson 1.1 Teaching Notes
 
 | **Topic** | **Week** | **Class Website** |
 | :---: | :---: | :---: |
-| XXX | XXX | [Link](https://learn.codethedream.org/) |
+| Project Setup and React Basics | 1.1 | [Link](https://learn.codethedream.org/react-fundamentals-project-setup-and-react-basics/) |
 
 ## Outline 
 - Overview
@@ -11,9 +11,24 @@
 
 ## Overview 
 
-**Learning Objective:** XXX
+**Learning Objective:** Students will be able to generate a new React project and create a new unordered to-do list
 
-WRITE OVERVIEW TEXT HERE 
+**Concepts Covered**
+- Intro to React
+- Project setup
+- Components
+- JSX
+- List in React
+
+**Todo list End-State**
+
+- Contains
+  - installed CRA
+  - heading of h1 type,
+  - below that is an unordered list of the items found in the array
+- Does
+  - React renders the h1, ul, then generates all the li's based on the array of todos.
+  - No interactivity yet 🙁
 
 ## Sample Mentor Session 
 
@@ -40,9 +55,11 @@ While students are responding to the check-in questions, take attendance.
 
 Let's review some key terms and concepts from this week's lesson materials: 
  
- - TBD
- - TBD 
- - TBD 
+ - Intro to React
+ - Project setup
+ - Components
+ - JSX
+ - List in React
  
 ### :notebook: Assignment Overview
 
@@ -50,15 +67,15 @@ Let's take a look at the directions for this week's assignment: [XXX](XXX)
 
 ### :thinking: Questions 
 
-Use this time to answer students questions from the lesson materials and assignments. Remember to incorporate teaching strategies:
+Use this time to answer students questions from the lesson materials and assignments. Remember to incorporate teaching strategies: 
 
-  - Think aloud: Narrate your thinking to show students how developers approach problems. For example, “When I saw this problem, I decided to approach it by…”
-  - Use positive narration. For example, “I appreciate that Raheem has his camera on today” or “That was an excellent question."
-  - Warm call on students or practice popcorn calling (students can ask another student for help) if participation is low.
+  - **Think aloud**: Narrate your thinking to show students how developers approach problems. For example, “When I saw this problem, I decided to approach it by…”
+  - Use **positive narration**. For example, “I appreciate that Raheem has his camera on today” or “That was an excellent question."
+  - **Warm call** on students or **practice popcorn calling** (students can ask another student for help) if participation is low.
 
 ### :telescope: Looking Ahead 
 
-XXX
+Next week, we will add an unordered list to our to-do app. 
 
 ### :nerd_face: Mentor Session Report Form 
 
@@ -66,4 +83,6 @@ Please remember to fill out the [Mentor Session Report Form](https://airtable.co
 
 ## Common Issues 
 
-TBD
+In the first mentor session, one of your main goals should be establishing rapport with students. Focus on creating a space where it's ok to ask for help or be wrong. Remind students that professional developers need to get help all the time.
+
+:crown: Thanks to Roy Mosby, who contributed to the teaching notes and rubric for this lesson! 

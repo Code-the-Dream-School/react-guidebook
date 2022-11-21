@@ -99,10 +99,6 @@ Use this time to answer students questions from the lesson materials and assignm
   - Use positive narration. For example, “I appreciate that Raheem has his camera on today” or “That was an excellent question."
   - Warm call on students or practice popcorn calling (students can ask another student for help) if participation is low.
 
-### :telescope: Looking Ahead 
-
-XXX
-
 ### :nerd_face: Mentor Session Report Form 
 
 Please remember to fill out the [Mentor Session Report Form](https://airtable.com/shrp0jjRtoMyTXRzh) at the end of the session.

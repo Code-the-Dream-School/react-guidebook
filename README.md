@@ -82,6 +82,15 @@ Use this time to answer any additional questions from students. Remember to inco
 - Use positive narration. For example, “I appreciate that Raheem has his camera on today” or “That was an excellent question."
 - Warm call on students or practice popcorn calling (students can ask another student for help) if participation is low.
 
+### End of lesson app capabilities/features
+
+- loads todos from array
+- submission no longer refreshes page
+- submit button does:
+  - fills input content into the paragraph tag
+  - console.logs same input value
+  - clears field value
+
 ## :nerd_face: Mentor Session Report Form 
 
 Please remember to fill out the [Mentor Session Report Form](https://airtable.com/shrp0jjRtoMyTXRzh) at the end of the session.

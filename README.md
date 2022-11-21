@@ -38,58 +38,45 @@ While students are responding to the check-in questions, take attendance.
 
 Let's review some key terms and concepts from this week's lesson materials: 
  
-- Async data
-- Conditional rendering
-- Advanced state
-- Impossible state
+- Data fetching
+- Data re-fetching
+- memoized handlers
  
 #### Observations
 
-- Promise...resolve is more difficult to wrap your head around than fetch
-  - BUT the underlying technology of fetch is Promise!
-  - [JS Promises: an intro](https://web.dev/promises/)
-  - [States and Fates](https://github.com/domenic/promises-unwrapping/blob/master/docs/states-and-fates.md)
+- Course material makes use of useReducer (look at them dispatches) while the lesson instructions does not.
+- the whole codebase (references to item.title should NOT be changed to handle the API) should not change for the API. nly the entrypoint of the data which should map it to the "shape" used already. "Serialized"
 
-#### Async data
+#### Data fetching
 
-- Allows for time-expensive processes (fetching data) to be non-blocking
+- setup varies between APIs. Some need authentication -developer key, secret, token, session token, etc. Some are open. Find API docs.
 
-#### Conditional rendering
+#### Data re-fetching
 
-- Evaluate the condition of a particular evaluation then use it to decide whether to render something
-  - inline with ternary
-  - separate function that returns jsx (if/then, switch/case/default, etc)
-  - React accepts `null` and will do nothing
-- Nice for user interface to show a "loading" status
-- Hide resources for certain types of users
-  - Links/ resources available for only logged in users
-  - Login form for those who are not logged in (makes no sense to show a login form when someone is already logged in)
+- adding query parameters to fetch url
 
-#### Advanced state
+#### Memoized handlers
 
-- useReducer- good for complex state structures (think redux)
-
-#### Impossible state
-
-- multiple useStates can end up causing problems when useEffect is introduced, especially when having to handle errors. Should a promise reject, depending on how the useState's have been implemented, there could be a conflict (eg- a fetch fails but an error message is never able to be shown because a "loading" indicator state does not get changed on a success.)
-- more info about how to use useReducer
+- saves a the results of a function giving an argument(s). Acts as a "wrapper" around the invocation that looks at the argument. If the argument has been used previously, the memo will pass back the same value rather than invoking the function again.
+- React has `useCallback` and `useMemo`
+  - `useCallback` returns function when dependencies change (good for caching results of API calls with params)
+  - `useMemo` returns the value of a computationally expensive function and does so when its dependencies change.
 
 #### Potential concept demo ideas
 
-- practical useReducer scenario
-- conditional rendering- have a "complete task" button strike through task then exposes a "hide all completed tasks" button
-- if field empty and isLoading, disable submit
+- JS memo alongside React useMemo
+- salient useMemo, useCallback examples
+- error handling (auth, dead connection, resource 404)
 
 #### Todo list instructions call-outs
 
-- the new useEffect with the Promise is muddy AF
-  - The promise should be given, instructions should be re-worded, or a brief explanation of a Promise and its composition should be provided.
-- programmer set up for frustration by allowing then to experience dueling useEffects before warning them
+- Suggest updating the API data as it is fetched rather than changing component code.
+- Suggest stretch goals of saving new todos to Airtable.
 
 #### End of lesson app capabilities/features
 
-- Todo list will load from local storage after 2 seconds, until it does, a loading message will show on the screen
-- adding todos will not work until time has elapsed
+- Todo list loads information from the Airtable API
+- New todos show in app but do not get saved up to Airtable
 
 ### :thinking: Questions 
 

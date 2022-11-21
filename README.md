@@ -1,8 +1,8 @@
-# Lesson XXX Teaching Notes 
+# Lesson 1.6 Teaching Notes 
 
 | **Topic** | **Week** | **Class Website** |
 | :---: | :---: | :---: |
-| XXX | XXX | [Link](https://learn.codethedream.org/) |
+| Reusable Components, Imperative React | 1.6 | [Link](https://learn.codethedream.org/) |
 
 ## Outline 
 - Overview
@@ -11,9 +11,7 @@
 
 ## Overview 
 
-**Learning Objective:** XXX
-
-WRITE OVERVIEW TEXT HERE 
+**Learning Objective:** Students will be ablet to create a reusable input with label component, add a “remove” button to list items.
 
 ## Sample Mentor Session 
 
@@ -38,15 +36,59 @@ While students are responding to the check-in questions, take attendance.
 
 ### :mag: Content Overview 
 
-Let's review some key terms and concepts from this week's lesson materials: 
- 
- - TBD
- - TBD 
- - TBD 
- 
-### :notebook: Assignment Overview
+#### Concepts covered
 
-Let's take a look at the directions for this week's assignment: [XXX](XXX)
+- Reusable Components
+- Component Composition
+- Imperative React
+- Inline Handler
+
+#### Re-usable components
+
+- allows for re-use of structural elements
+  - List items
+  - Cards
+  - Articles
+- easiest if items are structurally same and display same types of data
+- re-usable components can be generalized enough to handle similar types of structural elements and be configured through props to handle specific implementation
+  - text input field, password field, number input - each has a label, a value property, and probably an onChange prop. Types (password, text, date, etc) can be passed in as props to configure.
+
+#### Component composition
+
+- wrapped much the same way as html- by placing the dom element/ component between the opening and closing tag of a component.
+- `children` props provides a place in the component to outlet the elements placed between component tags.
+- Very common pattern - used to fine-tune the structure of an app and also 3rd-party libraries to "wrap" components with their own functionality.
+
+#### Imperative React
+
+- coding "how to do a thing" vs React mentality of "describing what you want" then allowing React to deal with how to get there.
+- sometimes done to implement features from a 3rd-party library
+
+#### Inline handler
+
+- Technique to bind a function prop to the scope of the functional component. This provides access to variables found within that functional component.
+- avoids having to create a function in the component whose sole purpose is to invoke a callback from props.
+  - `onClick={onRemoveItem(item)}` *`item` would be 'undefined'
+  - `onClick={onRemoveItem.bind(null, item)}`
+  - `onClick={()=> onRemoveItem(item)}` *more popular*
+
+#### Potential concept demo ideas
+
+- Re-usable components
+  - Identical items
+  - abstracted items (various inputs, header + footer nav)
+- Imperative 3rd party usage
+- Mis-coded inline handler (looking for that undefined)
+
+#### Todo list instructions call-outs
+
+- useRef needs more explanation
+
+## End of lesson app capabilities/features
+
+- field auto focuses on every new todo
+- a button can remove individual todos
+- input field can be used elsewhere if needed
 
 ### :thinking: Questions 
 
@@ -56,10 +98,6 @@ Use this time to answer students questions from the lesson materials and assignm
   - Use positive narration. For example, “I appreciate that Raheem has his camera on today” or “That was an excellent question."
   - Warm call on students or practice popcorn calling (students can ask another student for help) if participation is low.
 
-### :telescope: Looking Ahead 
-
-XXX
-
 ### :nerd_face: Mentor Session Report Form 
 
 Please remember to fill out the [Mentor Session Report Form](https://airtable.com/shrp0jjRtoMyTXRzh) at the end of the session.
@@ -67,3 +105,5 @@ Please remember to fill out the [Mentor Session Report Form](https://airtable.co
 ## Common Issues 
 
 TBD
+
+:crown: Thanks to Roy Mosby, who created the teaching notes for this lesson, and to Raquel Román-Rodriguez, who created the lesson rubric. 

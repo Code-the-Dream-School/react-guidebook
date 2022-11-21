@@ -106,3 +106,5 @@ Please remember to fill out the [Mentor Session Report Form](https://airtable.co
 ## Common Issues 
 
 TBD
+
+:crown: Thanks to Roy Mosby, who assembled the teaching notes for this lesson, and Raquel Román-Rodriguez, who assembled the rubrics. 

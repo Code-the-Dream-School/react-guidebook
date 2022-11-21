@@ -1,8 +1,8 @@
-# Lesson XXX Teaching Notes 
+# Lesson 1.5 Teaching Notes 
 
 | **Topic** | **Week** | **Class Website** |
 | :---: | :---: | :---: |
-| XXX | XXX | [Link](https://learn.codethedream.org/) |
+| Hooks and Fragments | 1.5 | [Link](https://learn.codethedream.org/) |
 
 ## Outline 
 - Overview
@@ -11,9 +11,7 @@
 
 ## Overview 
 
-**Learning Objective:** XXX
-
-WRITE OVERVIEW TEXT HERE 
+**Learning Objective:** Students will be able to save the to-do list in their local browser; create custom hooks. 
 
 ## Sample Mentor Session 
 
@@ -40,13 +38,60 @@ While students are responding to the check-in questions, take attendance.
 
 Let's review some key terms and concepts from this week's lesson materials: 
  
- - TBD
- - TBD 
- - TBD 
+- Side-effects
+- Custom hooks
+- React fragments
+
+- Need way for the React app to interact with the outside world
+  - CRUD data from API
+  - Interact with browser storage (Cookies, SessionStorage, IndexedDb, etc.)
+  - Interact with DOM outside of using React (some 3rd party libraries need to directly manipulate the DOM)
+- Consists of 2 parts
+  - function that does work
+  - array of state values to listen to
+    - when any of the values listed change, useEffect re-runs
+    - empty array will run only when component mounts
+    - no array means effect will run every time component renders
+- Always runs when component mounts (explain React 18's x2 mount)
+- multiple useEffect can be used
+
+#### Custom hooks
+
+- don't call hooks from normal function
+  - can be called in highest level of functional component
+  - can be called inside another hook
+  - eslint-plugin-react-hooks can lint for violations
+
+#### React fragments
+
+- JSX restricts return statements to return only a single top-level dom element.
+- Up until now, you've been wrapping things in a div or some other single element
+- Fragment allows the developer to return multiple dom elements on the same level
+- longhand: `<React.Fragment><bunch/><of/><sibling/><elements/><React.Fragment />`
+- shorthand is `<><bunch/><of/><sibling/><elements/></>`
+- "disappears" when the JSX renders out HTML
+
+#### Potential concept demo ideas
+
+- demo useEffect's optional array
+  - empty
+  - one, multiple values
+  - no array
+- show how fragments disappear
+- make a custom hook
  
 ### :notebook: Assignment Overview
 
-Let's take a look at the directions for this week's assignment: [XXX](XXX)
+#### Side-effects
+
+### Todo list instructions call-outs
+
+- The custom hook is a leap of logic and may require additional hand-holding
+
+### End of lesson app capabilities/features
+
+- app loads saved todos from local storage
+- can add new items which automatically get saved back
 
 ### :thinking: Questions 
 
@@ -56,10 +101,6 @@ Use this time to answer students questions from the lesson materials and assignm
   - Use positive narration. For example, “I appreciate that Raheem has his camera on today” or “That was an excellent question."
   - Warm call on students or practice popcorn calling (students can ask another student for help) if participation is low.
 
-### :telescope: Looking Ahead 
-
-XXX
-
 ### :nerd_face: Mentor Session Report Form 
 
 Please remember to fill out the [Mentor Session Report Form](https://airtable.com/shrp0jjRtoMyTXRzh) at the end of the session.
@@ -67,3 +108,5 @@ Please remember to fill out the [Mentor Session Report Form](https://airtable.co
 ## Common Issues 
 
 TBD
+
+:crown: Thanks to Roy Mosby, who created the teaching notes for this lesson, and Raquel Román-Rodriguez, who created the lesson rubric. 

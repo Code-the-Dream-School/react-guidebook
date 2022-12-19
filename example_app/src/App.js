@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import TodoList from './TodoList';
 import AddTodoForm from './AddTodoForm';
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
 const url = `https://api.airtable.com/v0/${process.env.REACT_APP_AIRTABLE_BASE_ID}/Default`;
 
@@ -41,27 +40,17 @@ function App() {
     setTodoList(todoList.filter((todo) => todo.id !== id));
   }
 
-  function appSubComponent() {
-    return (
-      <div>
-        <h1>Todo List</h1>
-        <AddTodoForm onAddTodo={addTodo} />
-        {isLoading ? (
-          <p>Loading...</p>
-        ) : (
-          <TodoList todoList={todoList} onRemoveTodo={removeTodo} />
-        )}
-      </div>
-    );
-  }
-
   return (
-    <BrowserRouter>
-      <Routes>
-        <Route path="/" element={appSubComponent()}></Route>
-        <Route path="/new" element={<h1>New todo list</h1>}></Route>
-      </Routes>
-    </BrowserRouter>
+    <div>
+      <h1>Todo List</h1>
+
+      <AddTodoForm onAddTodo={addTodo} />
+      {isLoading ? (
+        <p>Loading...</p>
+      ) : (
+        <TodoList todoList={todoList} onRemoveTodo={removeTodo} />
+      )}
+    </div>
   );
 }
 

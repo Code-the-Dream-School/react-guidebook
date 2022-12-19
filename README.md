@@ -1,90 +1,50 @@
-# Lesson 1.4 Teaching Notes 
+# React Guidebook
 
-| **Topic** | **Week** | **Class Website** |
-| :---: | :---: | :---: |
-| Lifting State and Props Handling | 1.4 | [Link](https://learn.codethedream.org/) |
+This repository contains resources and tools for mentors covering Code The Dream's React Curriculum.
 
-## Outline 
-- Overview
-- Sample Mentor Session
-- Common Issues
+- Teaching notes for each of the lessons
+- Consolidated list of references pertinent to the materials
+- Example todo list app
+- Mentor sandbox
+- Rubrics for weekly code submissions
+- Mentor feedback and suggestions for curriculum
 
-## Overview 
+## Details of contents
 
-**Learning Objective:** Students will be able to move the hard-coded to-do list variable into state, add new to-do items to the list, and destructure props.
+### Teaching notes
 
-## Sample Mentor Session 
+The teaching notes, consolidated in the `teaching_notes` directory, provide a handy template for conducting the weekly lessons. Each document is broken down into an overview, a sample mentor session, and common issues experienced by learners for that week's materials.
 
-### :wave: Check-In
+### Consolidated list of references pertinent to the materials
 
-#### Check-In Open-Ended Questions 
+This is located in the [references markdown document](./references.md) at the base of the directory. Feel free to add to the list through a PR to `main`.
 
-- Start with an icebreaker from this [icebreaker list](https://docs.google.com/document/d/1WbwKn8B5GfRueq7Zbw0zx_k15aqyIqIs23i_WHI-pPI/edit?usp=sharing). 
-- What is something that you are excited to learn more about this week? 
+### Example todo list app
 
-#### Check-In Progress Poll 
+There is an example todo list app built using the course's materials found in the `example_app` directory. Each lesson has a corresponding branch which contains a code-complete example of what the students will be submitting for that lesson.
 
-- What is your progress on **this week's** materials?
+### Mentor sandbox
 
-  - [ ] Done
-  - [ ] Almost Done
-  - [ ] Halfway
-  - [ ] Just started
-  - [ ] Haven't started
+For the mentor's convenience, we have included a fresh install of Create-React-App (using yarn) inside of the `sandbox` directory. To use, navigate a terminal into that directory and use the `yarn` command to install all dependencies.
 
-While students are responding to the check-in questions, take attendance. 
+### Rubrics for weekly code submission
 
-### :mag: Content Overview 
+The `rubrics` directory, contains a consolidated list of rubrics for each of the week's code submissions. These are intended to be a guide to assist reviewers so they know the key items to focus on while performing code reviews. Please know that there will be variances between the example app's code and the student submissions. Some discretion is left to the student for function/variable naming, whether to use `<React.fragment>` vs `<>`, and some minor stylistic/semantic choices.
 
-## Concepts covered
+In addition to the details highlighted in the rubrics, pay attention to:
 
-- Lifting state
-- Controlled components
-- Props handling
+1. Does the code work as intended?
+2. Do they have the correct files, by name, in the correct directories? (this excepts some minor styling choices before lesson 3.1, which covers CSS)
+3. Their JavaScript and JSX is cleanly formatted and consistent. CTD does not have a style guide at this time.
+4. Variable/function names, when they differ from the lesson materials, are short and descriptive of their use. Variable and callback names should not vary widely when passed down through props.
+5. Excessive personal comments are removed.
 
-### Lifting state
+### Mentor feedback and suggestions for curriculum
 
-- Establishes state management in a parent component, where more persistent state is usually managed.
-- an update handler is passed down to the child component where it is used to pass data changes back up to the parent.
+CTD staff welcome and encourage feedback on our materials through a variety of channels.
 
-#### Controlled components
-
-- Allows React to be fully aware of data in form fields at all times.
-- Turns each input into a piece of managed state (useState)
-  - Couples input value to a value then uses an update function tied to events on the specific field (usually onChange)
-- Instead of having to grab all values from the form on a submit event, it can grab from the state which is a much easier, cleaner process.
-- I call this sort of data "ephemeral"- it's important for user interaction while the component is present but i isn't until data is submitted or confirmed as complete in some other way, it does not have an impact on the larger app.
-  - This way the larger picture of state management isn't muddied.
-  - Also keeps temporary data out of other state management systems like redux
-
-#### Props handling
-
-- props is an object full of properties (thus the name) passed from a parent to child component.
-- destructuring in the child function's arguments allows the developer to grab at the values directly instead of having to reference it through dot notation.
-  - serves as a reminder of what values are available
-  - increases readability as there's less code to deal with
-
-### Potential concept demo ideas
-
-- Individual controlled fields vs entire form controlled via single handler
-- multi-layered object destructuring (see road to react p72)
-- grabbing additional properties using rest operator (see road to react p73)
-- how to import and use ULID or UUID for keys instead of Date.now()
-
-### :thinking: Questions 
-
-Use this time to answer students questions from the lesson materials and assignments. Remember to incorporate teaching strategies:
-
-  - Think aloud: Narrate your thinking to show students how developers approach problems. For example, “When I saw this problem, I decided to approach it by…”
-  - Use positive narration. For example, “I appreciate that Raheem has his camera on today” or “That was an excellent question."
-  - Warm call on students or practice popcorn calling (students can ask another student for help) if participation is low.
-
-### :nerd_face: Mentor Session Report Form 
-
-Please remember to fill out the [Mentor Session Report Form](https://airtable.com/shrp0jjRtoMyTXRzh) at the end of the session.
-
-## Common Issues 
-
-TBD
-
-:crown: Thanks to Roy Mosby, who assembled the teaching notes for this lesson, and Raquel Román-Rodriguez, who assembled the lesson rubric. 
+- For errors/improvement to this material, please submit a PR and include details as appropriate.
+  - for teaching notes or rubrics, make the PR against `main`
+  - for the example app, make the PR against the appropriate lesson
+- For errors/improvement related student instruction, open an issue on the curriculum repo. We have included a "Curriculum Issues" and "Functional Issues" issue ticket template.
+- Issues can also be brought to the attention of the cohort leader on [Slack](https://codethedream.slack.com/team/U03KDBGK5M5) or [email](mailto:cockatoo@codethedream.org).

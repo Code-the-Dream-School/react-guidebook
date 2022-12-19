@@ -1,110 +1,50 @@
-# Lesson 1.7 Teaching Notes 
+# React Guidebook
 
-| **Topic** | **Week** | **Class Website** |
-| :---: | :---: | :---: |
-| Asynchronous Data, Conditional Rendering, Advanced and Impossible State | 1.7 | [Link](https://learn.codethedream.org/) |
+This repository contains resources and tools for mentors covering Code The Dream's React Curriculum.
 
-## Outline 
-- Overview
-- Sample Mentor Session
-- Common Issues
+- Teaching notes for each of the lessons
+- Consolidated list of references pertinent to the materials
+- Example todo list app
+- Mentor sandbox
+- Rubrics for weekly code submissions
+- Mentor feedback and suggestions for curriculum
 
-## Overview 
+## Details of contents
 
-**Learning Objective:** Students will be able to connect to Airtable API and fetch data from Airtable. 
+### Teaching notes
 
-## Sample Mentor Session 
+The teaching notes, consolidated in the `teaching_notes` directory, provide a handy template for conducting the weekly lessons. Each document is broken down into an overview, a sample mentor session, and common issues experienced by learners for that week's materials.
 
-### :wave: Check-In
+### Consolidated list of references pertinent to the materials
 
-#### Check-In Open-Ended Questions 
+This is located in the [references markdown document](./references.md) at the base of the directory. Feel free to add to the list through a PR to `main`.
 
-- Start with an icebreaker from this [icebreaker list](https://docs.google.com/document/d/1WbwKn8B5GfRueq7Zbw0zx_k15aqyIqIs23i_WHI-pPI/edit?usp=sharing). 
-- What is something that you are excited to learn more about this week? 
+### Example todo list app
 
-#### Check-In Progress Poll 
+There is an example todo list app built using the course's materials found in the `example_app` directory. Each lesson has a corresponding branch which contains a code-complete example of what the students will be submitting for that lesson.
 
-- What is your progress on **this week's** materials?
+### Mentor sandbox
 
-  - [ ] Done
-  - [ ] Almost Done
-  - [ ] Halfway
-  - [ ] Just started
-  - [ ] Haven't started
+For the mentor's convenience, we have included a fresh install of Create-React-App (using yarn) inside of the `sandbox` directory. To use, navigate a terminal into that directory and use the `yarn` command to install all dependencies.
 
-While students are responding to the check-in questions, take attendance. 
+### Rubrics for weekly code submission
 
-### :mag: Content Overview 
+The `rubrics` directory, contains a consolidated list of rubrics for each of the week's code submissions. These are intended to be a guide to assist reviewers so they know the key items to focus on while performing code reviews. Please know that there will be variances between the example app's code and the student submissions. Some discretion is left to the student for function/variable naming, whether to use `<React.fragment>` vs `<>`, and some minor stylistic/semantic choices.
 
-Let's review some key terms and concepts from this week's lesson materials: 
- 
-- Async data
-- Conditional rendering
-- Advanced state
-- Impossible state
+In addition to the details highlighted in the rubrics, pay attention to:
 
-#### Observations
+1. Does the code work as intended?
+2. Do they have the correct files, by name, in the correct directories? (this excepts some minor styling choices before lesson 3.1, which covers CSS)
+3. Their JavaScript and JSX is cleanly formatted and consistent. CTD does not have a style guide at this time.
+4. Variable/function names, when they differ from the lesson materials, are short and descriptive of their use. Variable and callback names should not vary widely when passed down through props.
+5. Excessive personal comments are removed.
 
-- Promise...resolve is more difficult to wrap your head around than fetch
-  - BUT the underlying technology of fetch is Promise!
-  - [JS Promises: an intro](https://web.dev/promises/)
-  - [States and Fates](https://github.com/domenic/promises-unwrapping/blob/master/docs/states-and-fates.md)
+### Mentor feedback and suggestions for curriculum
 
-#### Async data
+CTD staff welcome and encourage feedback on our materials through a variety of channels.
 
-- Allows for time-expensive processes (fetching data) to be non-blocking
-
-#### Conditional rendering
-
-- Evaluate the condition of a particular evaluation then use it to decide whether to render something
-  - inline with ternary
-  - separate function that returns jsx (if/then, switch/case/default, etc)
-  - React accepts `null` and will do nothing
-- Nice for user interface to show a "loading" status
-- Hide resources for certain types of users
-  - Links/ resources available for only logged in users
-  - Login form for those who are not logged in (makes no sense to show a login form when someone is already logged in)
-
-#### Advanced state
-
-- useReducer- good for complex state structures (think redux)
-
-#### Impossible state
-
-- multiple useStates can end up causing problems when useEffect is introduced, especially when having to handle errors. Should a promise reject, depending on how the useState's have been implemented, there could be a conflict (eg- a fetch fails but an error message is never able to be shown because a "loading" indicator state does not get changed on a success.)
-- more info about how to use useReducer
-
-#### Potential concept demo ideas
-
-- practical useReducer scenario
-- conditional rendering- have a "complete task" button strike through task then exposes a "hide all completed tasks" button
-- if field empty and isLoading, disable submit
-
-#### Todo list instructions call-outs
-
-- the new useEffect with the Promise is muddy AF
-  - The promise should be given, instructions should be re-worded, or a brief explanation of a Promise and its composition should be provided.
-- programmer set up for frustration by allowing then to experience dueling useEffects before warning them
-
-#### End of lesson app capabilities/features
-
-- Todo list will load from local storage after 2 seconds, until it does, a loading message will show on the screen
-- adding todos will not work until time has elapsed
-
-### :thinking: Questions 
-
-Use this time to answer students questions from the lesson materials and assignments. Remember to incorporate teaching strategies:
-
-  - Think aloud: Narrate your thinking to show students how developers approach problems. For example, “When I saw this problem, I decided to approach it by…”
-  - Use positive narration. For example, “I appreciate that Raheem has his camera on today” or “That was an excellent question."
-  - Warm call on students or practice popcorn calling (students can ask another student for help) if participation is low.
-
-### :nerd_face: Mentor Session Report Form 
-
-Please remember to fill out the [Mentor Session Report Form](https://airtable.com/shrp0jjRtoMyTXRzh) at the end of the session.
-
-## Common Issues 
-
-TBD
-
-:crown: Thanks to Roy Mosby, who assembled the teaching notes for this lesson, and Raquel Román-Rodriguez, who assembled the rubrics. 
+- For errors/improvement to this material, please submit a PR and include details as appropriate.
+  - for teaching notes or rubrics, make the PR against `main`
+  - for the example app, make the PR against the appropriate lesson
+- For errors/improvement related student instruction, open an issue on the curriculum repo. We have included a "Curriculum Issues" and "Functional Issues" issue ticket template.
+- Issues can also be brought to the attention of the cohort leader on [Slack](https://codethedream.slack.com/team/U03KDBGK5M5) or [email](mailto:cockatoo@codethedream.org).

@@ -1,102 +1,50 @@
-# Lesson 1.3 Teaching Notes
+# React Guidebook
 
-| **Topic** | **Week** | **Lesson** |
-| :---: | :---: | :---: |
-| Props, State, and Handlers | 1.3 | [link](https://learn.codethedream.org/react-fundamentals-react-dom-and-components/) |
+This repository contains resources and tools for mentors covering Code The Dream's React Curriculum.
 
-## Outline
+- Teaching notes for each of the lessons
+- Consolidated list of references pertinent to the materials
+- Example todo list app
+- Mentor sandbox
+- Rubrics for weekly code submissions
+- Mentor feedback and suggestions for curriculum
 
-- [:telescope: Overview](#telescope-overview)
-- [:wave: Check-In](#wave-check-in)
-  - [Vocabulary Review](#vocabulary-review)
-  - [Knowledge Check-In](#knowledge-check-in)
-- [:bulb: Main Concepts](#bulb-main-concepts)
--  [:question: Additional Questions](#question-additional-questions)
+## Details of contents
 
-## :telescope: Overview
+### Teaching notes
 
-**Learning Objective**: Students will be able to Create a “To-do list item” component and move new list items into that component, 
-enable form submission, store “new to-do” within React state.
+The teaching notes, consolidated in the `teaching_notes` directory, provide a handy template for conducting the weekly lessons. Each document is broken down into an overview, a sample mentor session, and common issues experienced by learners for that week's materials.
 
-## :wave: Check-In
+### Consolidated list of references pertinent to the materials
 
-#### Check-In Open Question
+This is located in the [references markdown document](./references.md) at the base of the directory. Feel free to add to the list through a PR to `main`.
 
-- Start with an icebreaker from this [icebreaker list](https://docs.google.com/document/d/1WbwKn8B5GfRueq7Zbw0zx_k15aqyIqIs23i_WHI-pPI/edit?usp=sharing). 
-- What is something that you are excited to learn more about this week? 
+### Example todo list app
 
-#### Progress Poll 
+There is an example todo list app built using the course's materials found in the `example_app` directory. Each lesson has a corresponding branch which contains a code-complete example of what the students will be submitting for that lesson.
 
-- What is your progress on **this week's** materials?
+### Mentor sandbox
 
-  - [ ] Done
-  - [ ] Almost Done
-  - [ ] Halfway
-  - [ ] Just started
-  - [ ] Haven't started
+For the mentor's convenience, we have included a fresh install of Create-React-App (using yarn) inside of the `sandbox` directory. To use, navigate a terminal into that directory and use the `yarn` command to install all dependencies.
 
-## :mag: Review
+### Rubrics for weekly code submission
 
-Let's review some key terms and concepts from last week's lesson: [*React DOM and Components*](https://learn.codethedream.org/react-fundamentals-react-dom-and-components/).
+The `rubrics` directory, contains a consolidated list of rubrics for each of the week's code submissions. These are intended to be a guide to assist reviewers so they know the key items to focus on while performing code reviews. Please know that there will be variances between the example app's code and the student submissions. Some discretion is left to the student for function/variable naming, whether to use `<React.fragment>` vs `<>`, and some minor stylistic/semantic choices.
 
-### Vocabulary Review
+In addition to the details highlighted in the rubrics, pay attention to:
 
-- Instantiate
-- DOM
-- Declaration
-- Arrow Function
-- Callback Function
-- Implicit Return
+1. Does the code work as intended?
+2. Do they have the correct files, by name, in the correct directories? (this excepts some minor styling choices before lesson 3.1, which covers CSS)
+3. Their JavaScript and JSX is cleanly formatted and consistent. CTD does not have a style guide at this time.
+4. Variable/function names, when they differ from the lesson materials, are short and descriptive of their use. Variable and callback names should not vary widely when passed down through props.
+5. Excessive personal comments are removed.
 
-## :bulb: Main Concepts
+### Mentor feedback and suggestions for curriculum
 
-### Props
+CTD staff welcome and encourage feedback on our materials through a variety of channels.
 
-- information from parent component for child component to use (how parent communicates with child)
-- called "props" for properties. Potentially includes children elements if any are placed between opening and closing tags.
-
-### State
-
-- data that describes the values being used inside the app.
-
-### Handler function in JSX
-
-- HTML + JS uses event handlers: addEventListener(type, listener)
-  - events eg: "click", "resize", "keyup"
-  - listener is callback function that does something when event fires on target
-- React uses synthetic events that closely mirror regular events but normalized across browsers to minimize behavioral variations
-  - conventionally named with "on" prefix then camelCase
-  - ? maybe something about bubble vs capture phases
-- The "handler function" is the callback function that is called when the synthetic event is triggered
-  - defined inline or outside of jsx then provided as a value for the event listener (differentiate between giving a function as a value vs a function's return value)
-  - inline: `onClick={(evt) => console.log(evt.target.value)}`
-  - as reference w/o args: `onClick={printHi}`
-  - as reference w/args: `onClick=((evt) => printEvent(evt))`
-  - don't invoke a function inside an event listener unless it returns a function
-
-## :question: Additional Questions
-
-Use this time to answer any additional questions from students. Remember to incorporate teaching strategies:
-
-- Think aloud: Narrate your thinking to show students how developers approach problems. For example, “When I saw this problem, I decided to approach it by…”
-- Use positive narration. For example, “I appreciate that Raheem has his camera on today” or “That was an excellent question."
-- Warm call on students or practice popcorn calling (students can ask another student for help) if participation is low.
-
-### End of lesson app capabilities/features
-
-- loads todos from array
-- submission no longer refreshes page
-- submit button does:
-  - fills input content into the paragraph tag
-  - console.logs same input value
-  - clears field value
-
-## :nerd_face: Mentor Session Report Form 
-
-Please remember to fill out the [Mentor Session Report Form](https://airtable.com/shrp0jjRtoMyTXRzh) at the end of the session.
-
-## Common Issues 
-
-TBD
-
-:crown: Thanks Roy Mosby, who assembled the teaching notes for this lesson. Raquel Román-Rodriguez assembled the rubric. 
+- For errors/improvement to this material, please submit a PR and include details as appropriate.
+  - for teaching notes or rubrics, make the PR against `main`
+  - for the example app, make the PR against the appropriate lesson
+- For errors/improvement related student instruction, open an issue on the curriculum repo. We have included a "Curriculum Issues" and "Functional Issues" issue ticket template.
+- Issues can also be brought to the attention of the cohort leader on [Slack](https://codethedream.slack.com/team/U03KDBGK5M5) or [email](mailto:cockatoo@codethedream.org).

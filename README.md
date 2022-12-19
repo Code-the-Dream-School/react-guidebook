@@ -1,97 +1,50 @@
-# Lesson 1.8 Teaching Notes 
+# React Guidebook
 
-| **Topic** | **Week** | **Class Website** |
-| :---: | :---: | :---: |
-| Data Fetching and Refetching, Memorized Handlers | 1.8 | [Link](https://learn.codethedream.org/) |
+This repository contains resources and tools for mentors covering Code The Dream's React Curriculum.
 
-## Outline 
-- Overview
-- Sample Mentor Session
-- Common Issues
+- Teaching notes for each of the lessons
+- Consolidated list of references pertinent to the materials
+- Example todo list app
+- Mentor sandbox
+- Rubrics for weekly code submissions
+- Mentor feedback and suggestions for curriculum
 
-## Overview 
+## Details of contents
 
-**Learning Objective:** Students will be able to connect to Airtable API and fetch data from Airtable.
+### Teaching notes
 
-## Sample Mentor Session 
+The teaching notes, consolidated in the `teaching_notes` directory, provide a handy template for conducting the weekly lessons. Each document is broken down into an overview, a sample mentor session, and common issues experienced by learners for that week's materials.
 
-### :wave: Check-In
+### Consolidated list of references pertinent to the materials
 
-#### Check-In Open-Ended Questions 
+This is located in the [references markdown document](./references.md) at the base of the directory. Feel free to add to the list through a PR to `main`.
 
-- Start with an icebreaker from this [icebreaker list](https://docs.google.com/document/d/1WbwKn8B5GfRueq7Zbw0zx_k15aqyIqIs23i_WHI-pPI/edit?usp=sharing). 
-- What is something that you are excited to learn more about this week? 
+### Example todo list app
 
-#### Check-In Progress Poll 
+There is an example todo list app built using the course's materials found in the `example_app` directory. Each lesson has a corresponding branch which contains a code-complete example of what the students will be submitting for that lesson.
 
-- What is your progress on **this week's** materials?
+### Mentor sandbox
 
-  - [ ] Done
-  - [ ] Almost Done
-  - [ ] Halfway
-  - [ ] Just started
-  - [ ] Haven't started
+For the mentor's convenience, we have included a fresh install of Create-React-App (using yarn) inside of the `sandbox` directory. To use, navigate a terminal into that directory and use the `yarn` command to install all dependencies.
 
-While students are responding to the check-in questions, take attendance. 
+### Rubrics for weekly code submission
 
-### :mag: Content Overview 
+The `rubrics` directory, contains a consolidated list of rubrics for each of the week's code submissions. These are intended to be a guide to assist reviewers so they know the key items to focus on while performing code reviews. Please know that there will be variances between the example app's code and the student submissions. Some discretion is left to the student for function/variable naming, whether to use `<React.fragment>` vs `<>`, and some minor stylistic/semantic choices.
 
-Let's review some key terms and concepts from this week's lesson materials: 
- 
-- Data fetching
-- Data re-fetching
-- memoized handlers
- 
-#### Observations
+In addition to the details highlighted in the rubrics, pay attention to:
 
-- Course material makes use of useReducer (look at them dispatches) while the lesson instructions does not.
-- the whole codebase (references to item.title should NOT be changed to handle the API) should not change for the API. nly the entrypoint of the data which should map it to the "shape" used already. "Serialized"
+1. Does the code work as intended?
+2. Do they have the correct files, by name, in the correct directories? (this excepts some minor styling choices before lesson 3.1, which covers CSS)
+3. Their JavaScript and JSX is cleanly formatted and consistent. CTD does not have a style guide at this time.
+4. Variable/function names, when they differ from the lesson materials, are short and descriptive of their use. Variable and callback names should not vary widely when passed down through props.
+5. Excessive personal comments are removed.
 
-#### Data fetching
+### Mentor feedback and suggestions for curriculum
 
-- setup varies between APIs. Some need authentication -developer key, secret, token, session token, etc. Some are open. Find API docs.
+CTD staff welcome and encourage feedback on our materials through a variety of channels.
 
-#### Data re-fetching
-
-- adding query parameters to fetch url
-
-#### Memoized handlers
-
-- saves a the results of a function giving an argument(s). Acts as a "wrapper" around the invocation that looks at the argument. If the argument has been used previously, the memo will pass back the same value rather than invoking the function again.
-- React has `useCallback` and `useMemo`
-  - `useCallback` returns function when dependencies change (good for caching results of API calls with params)
-  - `useMemo` returns the value of a computationally expensive function and does so when its dependencies change.
-
-#### Potential concept demo ideas
-
-- JS memo alongside React useMemo
-- salient useMemo, useCallback examples
-- error handling (auth, dead connection, resource 404)
-
-#### Todo list instructions call-outs
-
-- Suggest updating the API data as it is fetched rather than changing component code.
-- Suggest stretch goals of saving new todos to Airtable.
-
-#### End of lesson app capabilities/features
-
-- Todo list loads information from the Airtable API
-- New todos show in app but do not get saved up to Airtable
-
-### :thinking: Questions 
-
-Use this time to answer students questions from the lesson materials and assignments. Remember to incorporate teaching strategies:
-
-  - Think aloud: Narrate your thinking to show students how developers approach problems. For example, “When I saw this problem, I decided to approach it by…”
-  - Use positive narration. For example, “I appreciate that Raheem has his camera on today” or “That was an excellent question."
-  - Warm call on students or practice popcorn calling (students can ask another student for help) if participation is low.
-
-### :nerd_face: Mentor Session Report Form 
-
-Please remember to fill out the [Mentor Session Report Form](https://airtable.com/shrp0jjRtoMyTXRzh) at the end of the session.
-
-## Common Issues 
-
-TBD
-
-:crown: Thanks to Roy Mosby, who created the teaching notes for this lesson, and Raquel Román-Rodriguez, who created the rubric. 
+- For errors/improvement to this material, please submit a PR and include details as appropriate.
+  - for teaching notes or rubrics, make the PR against `main`
+  - for the example app, make the PR against the appropriate lesson
+- For errors/improvement related student instruction, open an issue on the curriculum repo. We have included a "Curriculum Issues" and "Functional Issues" issue ticket template.
+- Issues can also be brought to the attention of the cohort leader on [Slack](https://codethedream.slack.com/team/U03KDBGK5M5) or [email](mailto:cockatoo@codethedream.org).

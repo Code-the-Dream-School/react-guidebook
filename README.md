@@ -1,161 +1,50 @@
-# Lesson 1.2 Teaching Notes
+# React Guidebook
 
-| **Topic** | **Week** | **Lesson** |
-| :---: | :---: | :---: |
-| React DOM & Components | 1.2 | [link](https://learn.codethedream.org/react-fundamentals-react-dom-and-components/) |
+This repository contains resources and tools for mentors covering Code The Dream's React Curriculum.
 
-## Outline
+- Teaching notes for each of the lessons
+- Consolidated list of references pertinent to the materials
+- Example todo list app
+- Mentor sandbox
+- Rubrics for weekly code submissions
+- Mentor feedback and suggestions for curriculum
 
-- [:telescope: Overview](#telescope-overview)
-- [:wave: Check-In](#wave-check-in)
-- [:mag: Review](#mag-review)
-  - [Vocabulary Review](#vocabulary-review)
-  - [Knowledge Check-In](#knowledge-check-in)
-- [:bulb: Main Concepts](#bulb-main-concepts)
-  - [Vocabulary Terms](#vocabulary-terms)
-  - [React Component](#react-components)
-  - [Instantiating Components](#instantiating-components)
-  - [React DOM](#react-dom)
-  - [Component Definition](#component-definition)
--  [:question: Additional Questions](#question-additional-questions)
+## Details of contents
 
-## :telescope: Overview
+### Teaching notes
 
-**Learning Objective**: Students will be able to generate a new React project and create a new unordered to-do list. 
+The teaching notes, consolidated in the `teaching_notes` directory, provide a handy template for conducting the weekly lessons. Each document is broken down into an overview, a sample mentor session, and common issues experienced by learners for that week's materials.
 
-## :wave: Check-In
+### Consolidated list of references pertinent to the materials
 
-#### Check-In Open Question
+This is located in the [references markdown document](./references.md) at the base of the directory. Feel free to add to the list through a PR to `main`.
 
-- Start with an icebreaker from this [icebreaker list](https://docs.google.com/document/d/1WbwKn8B5GfRueq7Zbw0zx_k15aqyIqIs23i_WHI-pPI/edit?usp=sharing). 
-- What is something that you are excited to learn more about this week? 
+### Example todo list app
 
-#### Progress Poll 
+There is an example todo list app built using the course's materials found in the `example_app` directory. Each lesson has a corresponding branch which contains a code-complete example of what the students will be submitting for that lesson.
 
-- What is your progress on **this week's** materials?
+### Mentor sandbox
 
-  - [ ] Done
-  - [ ] Almost Done
-  - [ ] Halfway
-  - [ ] Just started
-  - [ ] Haven't started
+For the mentor's convenience, we have included a fresh install of Create-React-App (using yarn) inside of the `sandbox` directory. To use, navigate a terminal into that directory and use the `yarn` command to install all dependencies.
 
-## :mag: Review
+### Rubrics for weekly code submission
 
-Let's review some key terms and concepts from last week's lesson: [*React Fundamentals: Project Setup & React Basics*](https://learn.codethedream.org/react-fundamentals-project-setup-and-react-basics/).
+The `rubrics` directory, contains a consolidated list of rubrics for each of the week's code submissions. These are intended to be a guide to assist reviewers so they know the key items to focus on while performing code reviews. Please know that there will be variances between the example app's code and the student submissions. Some discretion is left to the student for function/variable naming, whether to use `<React.fragment>` vs `<>`, and some minor stylistic/semantic choices.
 
-### Vocabulary Review
+In addition to the details highlighted in the rubrics, pay attention to:
 
-- Single-page application (SPA)
-- Framework
-- React
-- Component
-- JSX
-- Babel
-- `map()`
-- `key`
-- Camel case
-- Pascal case
+1. Does the code work as intended?
+2. Do they have the correct files, by name, in the correct directories? (this excepts some minor styling choices before lesson 3.1, which covers CSS)
+3. Their JavaScript and JSX is cleanly formatted and consistent. CTD does not have a style guide at this time.
+4. Variable/function names, when they differ from the lesson materials, are short and descriptive of their use. Variable and callback names should not vary widely when passed down through props.
+5. Excessive personal comments are removed.
 
-### Knowledge Check-In
+### Mentor feedback and suggestions for curriculum
 
-- How do we know when to use `var`, `let`, or `const` when declaring a variable?
-  - `var` - never, reassignable, not block scoped
-  - `let` - for variables that might change value, reassignable, block scoped
-  - `const` - for variables that won't change value, not reassignable, block scoped
-- How does JSX become HTML?
-  - Babel transpiles JSX into VanillaJS which then evaluates to our HTML webpage
-- Why is it important to use the `key` attribute when creating a list?
-  - "A React app is made up of a tree of components. Whenever there’s a prop or state change in any component, React re-renders its components into its virtual DOM. The diffing algorithm compares the new virtual DOM with the old DOM at each level of the component tree, starting from the root node."
+CTD staff welcome and encourage feedback on our materials through a variety of channels.
 
-## :bulb: Main Concepts
-
-This week's lesson builds on the foundational knowledge from last week to expand our understanding of the **React Component**!
-
-### Vocabulary Terms
-
-- Instantiate
-- DOM
-- Declaration
-- Arrow Function
-- Callback Function
-- Implicit Return
-
-### React Components
-
-- What are *components* in React?
-
-  ```js
-  {vocabularyTerms.map( v => <li>{v.term} - {v.definition}</li>)}
-  ```
-
-- Why do we use components?
-
-  A component must:
-
-  1. return JSX
-  2. take one argument, `props`, which is an object
-  3. The functional binding name must begin with a capital letter
-
-- What are types of components in the component hierarchy?
-
-### Instantiating Components
-
-- What does *instantiate* mean?
-- How do we instantiate a component in React?
-
-### React DOM
-
-- What is the DOM?
-  - The Document Object Model is a tree-like structure that contains all of the elements and their properties of a website as the nodes.
-
-- What is the ReactDOM?
-
-  The `ReactDOM` is an importable package that provides methods to manage the DOM elements of a webpage
-
-- What is the purpose of the `createRoot` function?
-  > :warning: `createRoot` is a new method in React 18.
-
-  `createRoot` takes a "container" element and returns a root. We can then call `root.render()` with the element we want to render as an argument
-
-  ```js
-  // in index.js
-  const container = document.getElementById("root");
-  const root = createRoot(container);
-
-  root.render(
-    <App />
-  );
-  ```
-
-  ```js
-  // you may also see older react projects (< React 18) use this syntax:
-  const container = document.getElementByID("root");
-
-  ReactDOM.render(
-    <App />,
-    container
-  );
-  ```
-
-### Component Definition
-
-- How can we declare a component?
-
-- Aside from syntax, what are the differences between **arrow functions** and **function declarations**?
-  - Implicit Return
-  - `this`
-
-## :question: Additional Questions
-
-Use this time to answer any additional questions from students. 
-
-## :nerd_face: Mentor Session Report Form 
-
-Please remember to fill out the [Mentor Session Report Form](https://airtable.com/shrp0jjRtoMyTXRzh) at the end of the session.
-
-## Common Issues 
-
-TBD
-
-:crown: Thanks to Raquel Roman-Rodriguez, who assembled the teaching notes for this lesson.
+- For errors/improvement to this material, please submit a PR and include details as appropriate.
+  - for teaching notes or rubrics, make the PR against `main`
+  - for the example app, make the PR against the appropriate lesson
+- For errors/improvement related student instruction, open an issue on the curriculum repo. We have included a "Curriculum Issues" and "Functional Issues" issue ticket template.
+- Issues can also be brought to the attention of the cohort leader on [Slack](https://codethedream.slack.com/team/U03KDBGK5M5) or [email](mailto:cockatoo@codethedream.org).

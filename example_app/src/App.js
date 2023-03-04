@@ -7,23 +7,32 @@ const url = `https://api.airtable.com/v0/${process.env.REACT_APP_AIRTABLE_BASE_I
 function App() {
   const [todoList, setTodoList] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
-  useEffect(() => {
+
+  const fetchData = async () => {
     const options = {
       method: 'GET',
       headers: {
         Authorization: `Bearer ${process.env.REACT_APP_AIRTABLE_API_KEY}`,
       },
     };
-    fetch(url, options)
-      .then((resp) => resp.json())
-      .then((data) => {
-        const todos = data.records.map((item) => ({
-          id: item.id,
-          title: item.fields.Title,
-        }));
-        setTodoList([...todos]);
-        setIsLoading(false);
+    try {
+      const response = await fetch(url, options);
+      if (!response.ok) {
+        throw new Error(`Error: ${response.status}`);
+      }
+      const data = await response.json();
+      const todos = data.records.map((todo) => {
+        return { title: todo.fields.title, id: todo.id };
       });
+      setTodoList([...todos]);
+      setIsLoading(false);
+    } catch (error) {
+      console.log(error.message);
+    }
+  };
+
+  useEffect(() => {
+    fetchData();
   }, []);
 
   useEffect(() => {

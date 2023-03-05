@@ -15,6 +15,8 @@ This repository contains resources and tools for mentors covering Code The Dream
 
 The teaching notes, consolidated in the `teaching_notes` directory, provide a handy template for conducting the weekly lessons. Each document is broken down into an overview, a sample mentor session, and common issues experienced by learners for that week's materials.
 
+The teaching notes are identical across all branches. This is so that you are guaranteed to have identical teaching notes regardless of which branch you are on. This directory is version-controlled from [react-guidebook_teaching_notes](https://github.com/Code-the-Dream-School/react-guidebook_teaching_notes) repo. PRs for teaching materials can be opened here or on that repo. When accepted, a curriculum maintainer will sync the teaching_notes in this repo with the version-controlled teaching notes.
+
 ### Consolidated list of references pertinent to the materials
 
 This is located in the [references markdown document](./references.md) at the base of the directory. Feel free to add to the list through a PR to `main`.
@@ -22,6 +24,8 @@ This is located in the [references markdown document](./references.md) at the ba
 ### Example todo list app
 
 There is an example todo list app built using the course's materials found in the `example_app` directory. Each lesson has a corresponding branch which contains a code-complete example of what the students will be submitting for that lesson.
+
+Note that dependencies are slowly added as lessons progress. Make sure that you run `Yarn` to update your local dependencies when moving between branches or when the app does not work. Do not open any PRs on `package.json` or `yarn.lock` files changes.
 
 ### Mentor sandbox
 

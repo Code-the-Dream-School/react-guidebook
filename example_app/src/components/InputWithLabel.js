@@ -1,4 +1,5 @@
 import { useEffect, useRef } from 'react';
+import PropTypes from 'prop-types';
 
 export default function InputWithLabel({
   todoTitle,
@@ -11,7 +12,7 @@ export default function InputWithLabel({
     inputRef.current.focus();
   });
 
-    //inline css
+  //inline css
   const marginRight = () => {
     return { marginRight: '.25rem' };
   };
@@ -22,6 +23,7 @@ export default function InputWithLabel({
         {children}
       </label>
       <input
+        style={marginRight()}
         ref={inputRef}
         type="text"
         id="todoTitle"
@@ -32,3 +34,9 @@ export default function InputWithLabel({
     </>
   );
 }
+
+InputWithLabel.propTyps = {
+  todoTitle: PropTypes.string,
+  handleTitleChange: PropTypes.func,
+  children: PropTypes.children,
+};

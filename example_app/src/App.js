@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
-import TodoList from './TodoList';
-import AddTodoForm from './AddTodoForm';
+import TodoList from './components/TodoList';
+import AddTodoForm from './components/AddTodoForm';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
 const url = `https://api.airtable.com/v0/${process.env.REACT_APP_AIRTABLE_BASE_ID}/Default`;

@@ -10,9 +10,17 @@ export default function InputWithLabel({
   useEffect(() => {
     inputRef.current.focus();
   });
+
+    //inline css
+  const marginRight = () => {
+    return { marginRight: '.25rem' };
+  };
+
   return (
     <>
-      <label htmlFor="title">{children}</label>
+      <label htmlFor="title" style={marginRight()}>
+        {children}
+      </label>
       <input
         ref={inputRef}
         type="text"

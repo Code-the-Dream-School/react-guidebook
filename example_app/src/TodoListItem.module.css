@@ -1,0 +1,6 @@
+.ListItem {
+  color: #336699;
+  margin-bottom: .75rem;
+  display: grid;
+  grid-template-columns: 10fr 1fr;
+}

@@ -10,7 +10,7 @@ function App() {
       setTimeout(() => {
         resolve({
           data: {
-            todoList: JSON.parse(localStorage.getItem('savedTodoList')),
+            todoList: JSON.parse(localStorage.getItem('savedTodoList')) || []
           },
         });
       }, 2000);

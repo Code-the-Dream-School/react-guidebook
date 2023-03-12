@@ -23,7 +23,7 @@ function App() {
       }
       const data = await response.json();
       const todos = data.records.map((todo) => {
-        return { title: todo.fields.title, id: todo.id };
+        return { title: todo.fields.title, id: todo.id } || [];
       });
       setTodoList([...todos]);
       setIsLoading(false);

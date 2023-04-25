@@ -48,7 +48,7 @@ Now the input is focused automatically, but what happens when you submit the "Ad
 
 - [x] Open `/src/InputWithLabel.js`
 - [x] Use the `useRef` React hook to create an imperative ref named `inputRef`
-- [x] Define a `useEffect` React hook with an empty dependency list
+- [x] Define a `useEffect` React hook without dependency list
 - [x] Inside the side-effect handler function, call the `focus()` method on the current `inputRef`
 - [x] Remove the `autoFocus` prop on the input element
 - [x] Add a `ref` prop with value `inputRef` on the input element

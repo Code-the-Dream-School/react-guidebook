@@ -12,7 +12,7 @@ export default function InputWithLabel({
   });
   return (
     <>
-      <label htmlFor="title">{children}</label>
+      <label htmlFor="todoTitle">{children}</label>
       <input
         ref={inputRef}
         type="text"

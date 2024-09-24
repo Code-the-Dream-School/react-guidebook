@@ -1,6 +1,6 @@
 # React Guidebook
 
-This repository contains resources and tools for mentors covering Code The Dream's React Curriculum.
+This repository contains resources and tools for mentors covering Code The Dream's Intro to React v2 Curriculum.
 
 - Teaching notes for each of the lessons
 - Consolidated list of references pertinent to the materials

@@ -9,6 +9,10 @@ This repository contains resources and tools for mentors covering Code The Dream
 - Rubrics for weekly code submissions
 - Mentor feedback and suggestions for curriculum
 
+## Onboarding
+
+Check out our onboarding resources for new mentors on the [Getting Started](https://github.com/Code-the-Dream-School/node-express-guidebook/wiki/Getting-Started) page! 
+
 ## Details of contents
 
 ### Teaching notes
